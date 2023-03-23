@@ -37,24 +37,26 @@ const images = [
 
 // second type
 
+// const galleryList = document.querySelector(".gallery");
+
+// const makeNewGalleryItems = ({ url, alt }) => {
+//   const newItem = document.createElement("li");
+//   newItem.classList.add("gallery__item");
+
+//   newItem.insertAdjacentHTML("afterbegin", `<img src=${url} alt=${alt}></img>`);
+
+//   return newItem;
+// };
+
+// console.log(makeNewGalleryItems(images[0]));
+
+// const newGallery = images.map(makeNewGalleryItems);
+// galleryList.append(...newGallery);
+
+// third type
 const galleryList = document.querySelector(".gallery");
 
-const makeNewGalleryItems = ({ url, alt }) => {
-  const newItem = document.createElement("li");
-  newItem.classList.add("gallery__item");
-
-  const newItemImg = document.createElement("img");
-  newItemImg.setAttribute("src", url);
-  newItemImg.setAttribute("alt", alt);
-  newItemImg.classList.add("gallery__img");
-
-  newItem.insertAdjacentHTML("beforebegin");
-  // newItem.append(newItemImg);
-
-  return newItem;
-};
-
-console.log(makeNewGalleryItems(images[0]));
-
-const newGallery = images.map(makeNewGalleryItems);
-galleryList.append(...newGallery);
+const newGallery = images.map(({ url, alt }) => {
+  const newItem = `<li class="gallery__item"><img class="gallery__item" src=${url} alt=${alt}></li>`;
+  galleryList.insertAdjacentHTML("afterbegin", newItem);
+});
