@@ -57,13 +57,29 @@ const ingredients = [
 // oldList.append(...newElements);
 
 //third type
+// const oldList = document.querySelector("#ingredients");
+
+// const createListOption = (elements) => {
+//   return elements.map((elem) => {
+//     const newItem = document.createElement("li");
+//     newItem.textContent = elem;
+//     newItem.setAttribute("class", "item");
+
+//     return newItem;
+//   });
+// };
+
+// const newListElements = createListOption(ingredients);
+// oldList.append(...newListElements);
+
+// fourth type
 const oldList = document.querySelector("#ingredients");
 
 const createListOption = (elements) => {
   return elements.map((elem) => {
     const newItem = document.createElement("li");
     newItem.textContent = elem;
-    newItem.setAttribute("class", "item");
+    newItem.classList.add("item");
 
     return newItem;
   });
