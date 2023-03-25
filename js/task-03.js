@@ -56,7 +56,13 @@ const images = [
 // third type
 const galleryList = document.querySelector(".gallery");
 
-const newGallery = images.map(({ url, alt }) => {
-  const newItem = `<li class="gallery__item"><img class="gallery__item" src=${url} alt=${alt}></li>`;
-  galleryList.insertAdjacentHTML("afterbegin", newItem);
-});
+const newGallery = images
+  .map(
+    ({ url, alt }) =>
+      `<li class="gallery__item">
+    <img class="gallery__img"
+    src=${url} alt=${alt}></li>`
+  )
+  .join(" ");
+
+galleryList.insertAdjacentHTML("afterbegin", newGallery);
