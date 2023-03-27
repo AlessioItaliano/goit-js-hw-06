@@ -5,10 +5,11 @@ const greetingName = greetingOutput.textContent;
 greetingInput.addEventListener("input", onInputWritting);
 
 function onInputWritting(event) {
-  if (Number(event.currentTarget.value) === 0) {
+  if (Number(event.currentTarget.value.trim()) === 0) {
     greetingOutput.textContent = greetingName;
   } else {
-    greetingOutput.textContent = event.currentTarget.value;
+    greetingOutput.textContent = event.currentTarget.value.trim();
+    console.log(event.currentTarget.value.trim());
   }
 }
 
