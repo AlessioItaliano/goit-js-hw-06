@@ -1,21 +1,17 @@
 const greetingInput = document.querySelector("#name-input");
-const greetintOutput = document.querySelector("#name-output");
-console.dir(greetintOutput);
+const greetingOutput = document.querySelector("#name-output");
+const greetingName = greetingOutput.textContent;
+
 greetingInput.addEventListener("input", onInputWritting);
 
 function onInputWritting(event) {
-  greetintOutput.textContent = event.currentTarget.value;
-  console.log(event);
+  if (Number(event.currentTarget.value) === 0) {
+    greetingOutput.textContent = greetingName;
+  } else {
+    greetingOutput.textContent = event.currentTarget.value;
+  }
 }
 
-console.log(greetingInput);
-
-// const greeting = {
-//   inputOnScreen: document.querySelector("#name-input"),
-//   outputOnScreen: document.querySelector("#name-output"),
-// };
-// greeting.inputOnScreen.addEventListener("input", onInputWritting);
-
 // function onInputWritting(event) {
-//   greeting.outputOnScreen.textContent = event.currentTarget.value;
+//   greetintOutpug.textContent = event.currentTarget.value;
 // }
