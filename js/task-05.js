@@ -12,7 +12,3 @@ function onInputWritting(event) {
     console.log(event.currentTarget.value.trim());
   }
 }
-
-// function onInputWritting(event) {
-//   greetintOutpug.textContent = event.currentTarget.value;
-// }
